@@ -22,7 +22,7 @@ function Map() {
         instanceRef={mapRef}
         state={centerMap}
          >
-
+  
         </MapComponent>
       </YMaps>
     </section>
