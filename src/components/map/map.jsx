@@ -1,23 +1,30 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import './map.css';
-function Map() { 
-  
-  function init(){
-      var myMap = new ymaps.Map("map", {
-          center: [55.76, 37.64],
-          zoom: 7
-      });
-  }
+import {
+  YMaps, Map as MapComponent,
+} from 'react-yandex-maps';
 
-  useEffect(() => {
-    ymaps.ready(init);
-  },[])
+import { centerMap } from "../../const";
+
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+function Map() { 
+  const mapRef = useRef(null);
+
 
   return (
 
     <section className="map-section">
       <h2>Map</h2>
-      <div id="map"></div>
+      <YMaps query={{ apikey : API_KEY}} >
+        <MapComponent
+        className="map"
+        instanceRef={mapRef}
+        state={centerMap}
+         >
+
+        </MapComponent>
+      </YMaps>
     </section>
   )
  }
