@@ -6,6 +6,7 @@ import { fetchPoint } from '../api-creators/data-api';
 const initialState = {
   isLoading : false,
   pointsArray : [],
+  coordinateArray : [],
 }
 
 export const dataProcess = createSlice({
@@ -19,6 +20,7 @@ export const dataProcess = createSlice({
   extraReducers : {
     [fetchPoint.fulfilled.type] : (state,action) => {
       state.pointsArray.push(action.payload);
+      state.coordinateArray.push(action.payload.point);
       state.isLoaded = true;
     },
     [fetchPoint.pending.type] : (state) => {

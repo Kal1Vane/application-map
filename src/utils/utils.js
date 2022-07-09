@@ -20,6 +20,6 @@ export const normalaizePointServer = (
   }
   }) => ({
     adressTitle : text,
-    point : point
+    point : point.split(' ').reverse()
   });
 
