@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removePoint } from "../../store/data/data";
 import { getPoints } from "../../store/data/selectors";
-import { nanoid } from "@reduxjs/toolkit";
+
 
 
 function ListAdress() {  
   const points = useSelector(getPoints);
+  const dispatch = useDispatch();
 
   if (points.length === 0){
     return <h4>not point</h4>
@@ -14,8 +16,14 @@ function ListAdress() {
     <ul>
       {
        points.map((item) => {
+        const {id,adressTitle} = item;
           return (
-            <li key={nanoid(10)}>{item.adressTitle}</li>
+            <li key={id}>
+            <h3>{adressTitle}</h3>
+            <button onClick={() =>  {
+              dispatch(removePoint(id))
+            }} type="button">Close</button>
+            </li>
           )
         }) 
       }

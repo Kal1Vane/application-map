@@ -5,9 +5,9 @@ import {
   Placemark,
   Polyline
 } from 'react-yandex-maps';
-
-import { useSelector } from "react-redux";
-import { getPoints,getCordinate } from "../../store/data/selectors";
+import { fetchPoint } from "../../store/api-creators/data-api";
+import { useDispatch, useSelector } from "react-redux";
+import { getPoints } from "../../store/data/selectors";
 
 import { centerMap } from "../../const";
 import { nanoid } from "@reduxjs/toolkit";
@@ -16,7 +16,15 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function Map() { 
   const mapRef = useRef(null);
   const points = useSelector(getPoints);
-  const coordinate = useSelector(getCordinate);
+  const coordinate = points.map((item) => item.point);
+  const dispatch = useDispatch();
+
+  function onChangePoint(evt , id)  {
+    const coordinates = evt.get('target').geometry.getCoordinates();
+    console.log(coordinates)
+    dispatch(fetchPoint({adress: coordinates.reverse(),id})) 
+};
+  console.log(coordinate)
   return (
 
     <section className="map-section">
@@ -28,14 +36,16 @@ function Map() {
         state={centerMap}
          >
           {points.map((item) => {
-            const {point,adressTitle} = item;
+            const {point,adressTitle,id} = item;
           
 
-           return ( <Placemark 
+           return ( 
+            <Placemark 
               className="map__placemark"
                options={{
                 preset: "islands#icon",
                 iconColor : "#07bc0c",
+                draggable: true,
                }}
               key={nanoid(10)}
               properties={{
@@ -43,7 +53,9 @@ function Map() {
               }} 
               geometry={point}
               modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
-            />)
+              onDragEnd={(e) => onChangePoint(e,id)}
+            />
+            )
           })}           
           <Polyline 
             geometry={coordinate}

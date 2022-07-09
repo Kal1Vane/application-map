@@ -9,7 +9,7 @@ function SearchInput() {
     if(inputRef){
       console.log( inputRef.current.value); 
       const value = inputRef.current.value;
-      dispatch(fetchPoint(value));
+      dispatch(fetchPoint({adress: value}));
     }
   }
 

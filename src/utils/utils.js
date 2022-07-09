@@ -1,3 +1,5 @@
+import { nanoid } from "@reduxjs/toolkit";
+
 export const normalaizePointServer = (
   {
     "response": {
@@ -20,6 +22,7 @@ export const normalaizePointServer = (
   }
   }) => ({
     adressTitle : text,
-    point : point.split(' ').reverse()
+    point : point.split(' ').reverse(),
+    id: nanoid(10),
   });
 
