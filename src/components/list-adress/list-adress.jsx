@@ -6,7 +6,7 @@ import { nanoid } from "@reduxjs/toolkit";
 function ListAdress() {  
   const points = useSelector(getPoints);
 
-  if (points.lenght === 0){
+  if (points.length === 0){
     return <h4>not point</h4>
   }
 

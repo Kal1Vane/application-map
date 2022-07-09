@@ -10,7 +10,9 @@ export const normalaizePointServer = (
                               text,
                           }
                       },
-                      "Point": point
+                      "Point": {
+                        "pos": point
+                      }
                   }
               }
           ]
@@ -20,3 +22,4 @@ export const normalaizePointServer = (
     adressTitle : text,
     point : point
   });
+
