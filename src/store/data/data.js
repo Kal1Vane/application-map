@@ -15,6 +15,12 @@ export const dataProcess = createSlice({
     removePoint : (state,action) => {
       state.pointsArray = state.pointsArray.filter((point) => point.id !== action.payload)
     },
+    swapPoint : (state,action) => {
+      const points = state.pointsArray;
+      const x = action.payload.toIndex
+      const y = action.payload.fromIndex
+      [ points[x], points[y] ] = [ points[y], points[x] ];
+    }
   },
   extraReducers : {
     [fetchPoint.fulfilled.type] : (state,action) => {
@@ -42,4 +48,4 @@ export const dataProcess = createSlice({
   }
 })
 
-export const {removePoint} = dataProcess.actions;
+export const {removePoint,swapPoint} = dataProcess.actions;

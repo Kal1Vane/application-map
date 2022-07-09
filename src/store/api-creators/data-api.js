@@ -8,8 +8,6 @@ export const fetchPoint = createAsyncThunk(
   'data/fetchPoint',
   async ({adress,id = null}, thunkApi) => {
     try {
-      
-      console.log(adress,id)
       const {data} = await axios.get(`https://geocode-maps.yandex.ru/1.x/?apikey=${API_KEY}&format=json&geocode=${adress}&results=1`);
       const response = {
         coordinate : normalaizePointServer(data),
@@ -19,6 +17,5 @@ export const fetchPoint = createAsyncThunk(
     } catch (e) {
       return thunkApi.rejectWithValue('Not Found');
     }
-
   },
 );

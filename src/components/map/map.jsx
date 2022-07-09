@@ -21,10 +21,9 @@ function Map() {
 
   function onChangePoint(evt , id)  {
     const coordinates = evt.get('target').geometry.getCoordinates();
-    console.log(coordinates)
     dispatch(fetchPoint({adress: coordinates.reverse(),id})) 
-};
-  console.log(coordinate)
+  };
+
   return (
 
     <section className="map-section">
@@ -37,8 +36,7 @@ function Map() {
          >
           {points.map((item) => {
             const {point,adressTitle,id} = item;
-          
-
+        
            return ( 
             <Placemark 
               className="map__placemark"
