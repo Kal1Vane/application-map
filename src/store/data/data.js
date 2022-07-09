@@ -18,7 +18,7 @@ export const dataProcess = createSlice({
   },
   extraReducers : {
     [fetchPoint.fulfilled.type] : (state,action) => {
-      state.todoArray = action.payload;
+      state.pointsArray = action.payload;
       state.isLoaded = true;
     },
     [fetchPoint.pending.type] : (state) => {
