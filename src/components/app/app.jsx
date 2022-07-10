@@ -1,20 +1,21 @@
 import React from "react";
-import ListAdress from "../list-adress/list-adress";
+import ListAdressContainer from "../list-adress/list-adress-container";
 import Map from "../map/map";
-import SearchInput from "../search-input/search-input";
+import SearchInput from "../search-form/search-form";
+import './app.css';
 
 function App() {
   return (
     <section className="app-section">
-      <div className="map-container">
-        <Map />
-      </div>
       <React.StrictMode>
         <div className="content-container">
           <SearchInput />
-          <ListAdress />
+          <ListAdressContainer />
         </div>
       </React.StrictMode>
+      <div className="map-container">
+        <Map />
+      </div>
     </section>
   );
 }

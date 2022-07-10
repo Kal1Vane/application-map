@@ -1,0 +1,56 @@
+.search__form {
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+}
+.form__input-wrapper {
+  position: relative;
+}
+.form__input {
+  width: 100%;
+  transition: all .6s ;
+  position: relative;
+  padding: 6px 12px 6px 26px;
+  border: 1px solid  #dbdbdb;
+  border-radius: 4px;
+}
+.form__input:focus {
+  border: 1px solid  #dbdbdb;
+  outline: none;
+}
+.form__input-icon {
+  background: url('../../../public/img/adress.png') no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 32px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  z-index: 1;
+}
+.form__input.error {
+  border: 1px solid #ff00004f;
+}
+.form__title {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form__error {
+  transition: all .6s;
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  font-size: 14px;
+  color: #f54c4ce0;
+}
+
+@media screen and (max-width: 1024px) {
+  .form__input {
+    padding: 12px 12px 12px 26px;
+  }
+}

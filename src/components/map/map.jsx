@@ -27,7 +27,6 @@ function Map() {
   return (
 
     <section className="map-section">
-      <h2>Map</h2>
       <YMaps query={{ apikey : API_KEY}} >
         <MapComponent
         className="map"

@@ -1,0 +1,23 @@
+.app-section {
+  display: flex;
+  gap: 10px;
+}
+.map-container {
+  width: 100%;
+}
+.content-container {
+  width: 100%;
+  max-width: 400px;
+  min-width: 360px;
+  padding:0 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .app-section {
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  .content-container {
+    max-width: unset;  
+  }
+}

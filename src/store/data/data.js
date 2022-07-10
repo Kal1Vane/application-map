@@ -17,8 +17,8 @@ export const dataProcess = createSlice({
     },
     swapPoint : (state,action) => {
       const points = state.pointsArray;
-      const x = action.payload.toIndex
-      const y = action.payload.fromIndex
+      const x = action.payload.toIndex;
+      const y = action.payload.fromIndex;
       [ points[x], points[y] ] = [ points[y], points[x] ];
     }
   },

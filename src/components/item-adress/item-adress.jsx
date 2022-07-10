@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { removePoint } from "../../store/data/data";
 import { Draggable } from "react-beautiful-dnd";
+import './item-adress.css';
 
 function ItemAdress({props,index}) { 
   const {adressTitle,id} = props;
@@ -11,16 +12,18 @@ function ItemAdress({props,index}) {
     <Draggable key={id} draggableId={id} index={index}>
         {(provided) => (
           <li
+          className="list-item"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           key={id}>
-            <h3>{adressTitle}</h3>
+            <h3 className="item-title">{adressTitle}</h3>
             <button 
             onClick={() =>  {
               dispatch(removePoint(id))
             }} 
-            type="button">Close</button>
+            className="item-button"
+            type="button"></button>
           </li>
         )}
     </Draggable>
