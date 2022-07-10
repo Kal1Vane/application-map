@@ -26,3 +26,4 @@ export const normalaizePointServer = (
     id: nanoid(10),
   });
 
+

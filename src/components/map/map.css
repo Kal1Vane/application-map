@@ -5,7 +5,11 @@
   width: 100%; 
   height: 100vh;
 }
-
+.placemark-title {
+  font-weight: 300;
+  font-family: 'Rubik';
+  font-size: 14px;
+}
 @media screen and (max-width: 1024px) {
   .map {
     height: 80vh;

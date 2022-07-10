@@ -6,6 +6,10 @@
   padding: 10px;
   gap: 20px;
   border-radius: 4px;
+  transition: all .4s;
+}
+.list-item:hover {
+  border-color: #999292;
 }
 .item-button {
   position: relative;
@@ -13,9 +17,13 @@
   width: 16px;
   cursor: pointer;
   border: 0;
+  font-size: 0px;
+  overflow: hidden;
   background: url('../../../public/svg/close.svg') no-repeat;
 }
 .item-title {
   font-size: 16px;
   margin: 0;
+  font-family: 'Rubik';
+  font-weight: 400;
 }

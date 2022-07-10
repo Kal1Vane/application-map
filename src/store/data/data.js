@@ -36,13 +36,13 @@ export const dataProcess = createSlice({
       } else {
         state.pointsArray.push(coordinate);
       }
-      state.isLoaded = true;
+      state.isLoading = false;
     },
     [fetchPoint.pending.type] : (state) => {
-      state.isLoaded = false;
+      state.isLoading = true;
     },
     [fetchPoint.rejected.type] : (state,action) => {
-      state.isLoaded = true;
+      state.isLoading = false;
       toast.error(action.payload);
     },
   }

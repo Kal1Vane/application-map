@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Rubik';
+  src: local('Rubik'), url('../../../public/fonts/Rubik-Light.ttf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: local('Rubik'), url('../../../public/fonts/Rubik-Regular.ttf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: local('Rubik'), url('../../../public/fonts/Rubik-Bold.ttf') format('opentype');
+  font-weight: 700;
+}
+
 .app-section {
   display: flex;
   gap: 10px;

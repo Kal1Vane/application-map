@@ -18,14 +18,13 @@ function ListAdressContainer() {
     if(fromIndex === toIndex) {return;}
     dispatch(swapPoint({toIndex,fromIndex}));
    }
-  if (isLoading) {
-      return <h4>Loading...</h4>
-  }
+
   if (points.length === 0){
-    return <h4>Список адресов пуст</h4>
+    return <h4 className="list-title">Список адресов пуст</h4>
   }
 
   return (
+    <>
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId="list-adress">
         {(provided) => (
@@ -39,6 +38,8 @@ function ListAdressContainer() {
         )}
       </Droppable>
     </DragDropContext>
+    {isLoading && <h4>Loading...</h4>}
+    </>
   )
 }
 

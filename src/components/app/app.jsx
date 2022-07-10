@@ -4,6 +4,7 @@ import Map from "../map/map";
 import SearchInput from "../search-form/search-form";
 import './app.css';
 
+
 function App() {
   return (
     <section className="app-section">

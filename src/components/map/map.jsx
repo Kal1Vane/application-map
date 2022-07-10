@@ -46,7 +46,7 @@ function Map() {
                }}
               key={nanoid(10)}
               properties={{
-                balloonContent: adressTitle
+                balloonContent: `<span class="placemark-title">${adressTitle}</span>`
               }} 
               geometry={point}
               modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}

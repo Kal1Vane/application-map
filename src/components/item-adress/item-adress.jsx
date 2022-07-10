@@ -22,8 +22,9 @@ function ItemAdress({props,index}) {
             onClick={() =>  {
               dispatch(removePoint(id))
             }} 
+            
             className="item-button"
-            type="button"></button>
+            type="button">delete</button>
           </li>
         )}
     </Draggable>

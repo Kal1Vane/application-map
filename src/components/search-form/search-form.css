@@ -13,9 +13,13 @@
   padding: 6px 12px 6px 26px;
   border: 1px solid  #dbdbdb;
   border-radius: 4px;
+  font-family: 'Rubik';
+}
+.form__input:hover {
+  border-color: #7e7a7a;
 }
 .form__input:focus {
-  border: 1px solid  #dbdbdb;
+  border: 1px solid  #999393;
   outline: none;
 }
 .form__input-icon {
@@ -35,9 +39,12 @@
   border: 1px solid #ff00004f;
 }
 .form__title {
+  font-family: 'Rubik';
   margin: 0;
   font-size: 20px;
   margin-bottom: 10px;
+  font-weight: 700;
+  cursor: default;
 }
 
 .form__error {

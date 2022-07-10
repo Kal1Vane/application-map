@@ -32,10 +32,11 @@ function SearchForm() {
     <form 
     className="search__form"
     onSubmit={onSubmitSearch}>
-    <h5 className="form__title">Введите адресс</h5>
+    <h5 className="form__title">Введите адрес</h5>
     <div className="form__input-wrapper">
       <span className="form__input-icon"></span>
       <input 
+      placeholder="Адрес"
       className={isError ? "form__input error" : "form__input" }
       ref={inputRef} 
       onChange={onChangeInput} 
